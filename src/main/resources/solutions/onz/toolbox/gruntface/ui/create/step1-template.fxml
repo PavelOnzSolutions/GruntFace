@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="solutions.onz.toolbox.gruntface.ui.create.Step1TemplatePicker"
+      spacing="8">
+    <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
+
+    <HBox spacing="14" alignment="CENTER_LEFT">
+        <Label text="Mode:"/>
+        <fx:define><ToggleGroup fx:id="modeGroup"/></fx:define>
+        <RadioButton fx:id="modeResourceFromInclude" text="Resource from Include"
+                     toggleGroup="$modeGroup" selected="true" onAction="#onModeChange"/>
+        <RadioButton fx:id="modeResourceFromModule" text="Resource from Module"
+                     toggleGroup="$modeGroup" onAction="#onModeChange"/>
+        <RadioButton fx:id="modeIncludeFromModule" text="Include from Module"
+                     toggleGroup="$modeGroup" onAction="#onModeChange"/>
+    </HBox>
+
+    <TextField fx:id="filterField" promptText="Filter…"/>
+
+    <SplitPane fx:id="split" dividerPositions="0.45" VBox.vgrow="ALWAYS">
+        <ListView fx:id="templateList"/>
+        <VBox spacing="6">
+            <padding><Insets top="8" right="8" bottom="8" left="8"/></padding>
+            <Label fx:id="previewName" style="-fx-font-weight: bold"/>
+            <Label fx:id="previewFile" style="-fx-font-family: monospace; -fx-opacity: 0.8"/>
+            <Label fx:id="previewSource" wrapText="true"/>
+            <Label fx:id="previewVariables" wrapText="true"/>
+            <Label fx:id="previewUsedBy" wrapText="true"/>
+        </VBox>
+    </SplitPane>
+
+    <Label fx:id="emptyHint" text="" textFill="DARKORANGE" visible="false" managed="false"/>
+</VBox>

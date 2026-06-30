@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="solutions.onz.toolbox.gruntface.ui.InspectorController"
+      spacing="8">
+    <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
+    <Label fx:id="emptyHint" text="Click a node to inspect" alignment="CENTER" maxWidth="Infinity"/>
+    <VBox fx:id="content" spacing="12" visible="false" managed="false" VBox.vgrow="ALWAYS">
+        <Label fx:id="title" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+        <Label fx:id="subtitle" styleClass="subtitle" wrapText="true"/>
+        <Separator/>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="inspector-scroll" VBox.vgrow="ALWAYS">
+            <content>
+                <VBox fx:id="bodyBox" spacing="8"/>
+            </content>
+        </ScrollPane>
+    </VBox>
+</VBox>

@@ -1,0 +1,155 @@
+.diagram-card {
+    -fx-background-color: -color-bg-default;
+    -fx-border-color: -color-border-default;
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 10 12 10 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 4, 0, 0, 1);
+}
+/* Module / External / Common cards center a single Label; give it the same breathing room. */
+.diagram-card.module > .label,
+.diagram-card.external > .label,
+.diagram-card.common > .label {
+    -fx-padding: 4 6 4 6;
+}
+.diagram-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 6, 0, 0, 2);
+}
+.diagram-card:selected {
+    -fx-border-color: -color-accent-emphasis;
+    -fx-border-width: 2;
+}
+.diagram-card.cycle {
+    -fx-border-color: -color-warning-emphasis;
+    -fx-border-width: 2;
+}
+.diagram-card.error {
+    -fx-border-color: -color-danger-emphasis;
+    -fx-border-width: 2;
+}
+.diagram-card.guessed { -fx-opacity: 0.85; }
+.diagram-card.unknown { -fx-opacity: 0.70; }
+.diagram-card.dimmed  { -fx-opacity: 0.30; }
+
+.diagram-card .title {
+    -fx-font-weight: bold;
+    -fx-font-size: 13;
+    -fx-text-fill: -color-fg-default;
+}
+.diagram-card .subtitle {
+    -fx-font-size: 11;
+    -fx-text-fill: -color-fg-muted;
+}
+.diagram-card .resolved-name {
+    -fx-font-family: "JetBrains Mono", "Consolas", monospace;
+    -fx-font-size: 11;
+    -fx-text-fill: -color-fg-muted;
+}
+.diagram-card .resolved-name.fallback {
+    -fx-font-style: italic;
+}
+.diagram-card .caret {
+    -fx-font-size: 12;
+    -fx-text-fill: -color-fg-muted;
+}
+.diagram-card .port-row {
+    -fx-padding: 2 4 2 4;
+    -fx-font-size: 11;
+    -fx-text-fill: -color-fg-default;
+}
+.diagram-card .port-row:hover {
+    -fx-background-color: -color-bg-subtle;
+    -fx-cursor: hand;
+}
+
+.diagram-container {
+    -fx-background-color: -color-bg-subtle;
+    -fx-border-color: -color-border-muted;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+.diagram-container > .label {
+    -fx-padding: 6 10 0 10;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 14;
+}
+.diagram-container.region > .label {
+    -fx-font-size: 18;
+    -fx-text-fill: -color-fg-default;
+}
+.diagram-container.env > .label {
+    -fx-font-size: 14;
+}
+
+.diagram-edge {
+    -fx-stroke: -color-fg-muted;
+    -fx-stroke-width: 1;
+    -fx-fill: transparent;
+}
+.diagram-edge.depends-on {
+    -fx-stroke: -color-accent-emphasis;
+    -fx-stroke-width: 2;
+}
+.diagram-edge.uses {
+    -fx-stroke: -color-fg-muted;
+    -fx-stroke-width: 1;
+    -fx-stroke-dash-array: 4 4;
+}
+.diagram-edge.includes {
+    -fx-stroke: -color-warning-emphasis;
+    -fx-stroke-width: 1;
+    -fx-stroke-dash-array: 2 2;
+}
+/* `highlighted` / `dimmed` are applied to the EdgeNode Group, but the visible stroke
+   lives on the .diagram-edge Path child — so target both via descendant selectors. */
+.diagram-edge.highlighted,
+.highlighted > .diagram-edge {
+    -fx-stroke: -color-accent-emphasis;
+    -fx-stroke-width: 3;
+    -fx-opacity: 1.0;
+}
+.highlighted > .diagram-edge-arrow {
+    -fx-fill: -color-accent-emphasis;
+    -fx-stroke: -color-accent-emphasis;
+}
+.diagram-edge.dimmed,
+.dimmed > .diagram-edge,
+.dimmed > .diagram-edge-arrow {
+    -fx-opacity: 0.20;
+}
+.diagram-edge-arrow {
+    -fx-fill: -color-accent-emphasis;
+    -fx-stroke: -color-accent-emphasis;
+}
+
+.diagram-card.module {
+    -fx-background-color: derive(-color-chart-6-alpha70, 60%);
+    -fx-border-color: -color-chart-6;
+}
+.diagram-card.external {
+    -fx-background-color: -color-bg-subtle;
+    -fx-border-color: -color-border-muted;
+    -fx-border-style: segments(4, 4);
+}
+.diagram-card.common {
+    -fx-background-color: derive(-color-warning-emphasis, 60%);
+    -fx-border-color: -color-warning-emphasis;
+}
+
+.diagram-minimap {
+    -fx-background-color: -color-bg-default;
+    -fx-border-color: -color-border-default;
+    -fx-border-width: 1;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-padding: 4;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 6, 0, 0, 2);
+}
+.diagram-minimap-viewport {
+    -fx-stroke: -color-accent-emphasis;
+    -fx-stroke-width: 1.5;
+    -fx-fill: rgba(13, 71, 161, 0.15);
+}

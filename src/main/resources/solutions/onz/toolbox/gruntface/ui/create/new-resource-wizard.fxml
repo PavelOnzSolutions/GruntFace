@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="solutions.onz.toolbox.gruntface.ui.create.NewResourceWizard"
+            prefWidth="720" prefHeight="560">
+    <top>
+        <HBox spacing="24" alignment="CENTER_LEFT">
+            <padding><Insets top="14" right="16" bottom="14" left="16"/></padding>
+            <Label fx:id="step1Header" text="Template"/>
+            <Label text="·"/>
+            <Label fx:id="step2Header" text="Location"/>
+            <Label text="·"/>
+            <Label fx:id="step3Header" text="Dependencies"/>
+            <Label text="·"/>
+            <Label fx:id="step4Header" text="Inputs"/>
+        </HBox>
+    </top>
+    <center>
+        <StackPane fx:id="body"/>
+    </center>
+    <bottom>
+        <HBox spacing="8" alignment="CENTER_LEFT">
+            <padding><Insets top="10" right="16" bottom="14" left="16"/></padding>
+            <Button fx:id="cancelBtn" text="Cancel" onAction="#onCancel"/>
+            <Label fx:id="statusLabel" maxWidth="Infinity" HBox.hgrow="ALWAYS"/>
+            <Button fx:id="backBtn" text="Back" onAction="#onBack" disable="true"/>
+            <Button fx:id="nextBtn" text="Next" onAction="#onNext" defaultButton="true" disable="true"/>
+        </HBox>
+    </bottom>
+</BorderPane>

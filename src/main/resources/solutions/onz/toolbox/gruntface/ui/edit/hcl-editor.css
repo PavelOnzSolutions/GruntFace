@@ -1,0 +1,46 @@
+/* HCL editor — themed via AtlantaFX -color-* tokens so it follows the
+   active light/dark Primer theme. */
+
+.hcl-editor {
+    -fx-background-color: -color-bg-default;
+}
+
+.hcl-editor .code-area {
+    -fx-background-color: -color-bg-default;
+}
+
+/* CodeArea inner viewport — RichTextFX paints a separate background here. */
+.hcl-editor .code-area .scroll-pane,
+.hcl-editor .code-area .viewport,
+.hcl-editor .code-area .content {
+    -fx-background-color: -color-bg-default;
+}
+
+/* Default (unstyled) text colour. Syntax classes below override this. */
+.hcl-editor .code-area .text {
+    -fx-fill: -color-fg-default;
+}
+
+/* Caret + selection. */
+.hcl-editor .code-area .caret {
+    -fx-stroke: -color-fg-default;
+}
+.hcl-editor .code-area .selection {
+    -fx-fill: -color-accent-subtle;
+}
+
+/* Line-number gutter. */
+.hcl-editor .code-area .lineno {
+    -fx-background-color: -color-bg-subtle;
+    -fx-text-fill: -color-fg-muted;
+    -fx-border-color: -color-border-default;
+    -fx-border-width: 0 1 0 0;
+}
+
+/* Token colours. */
+.hcl-editor .code-area .hcl-comment { -fx-fill: -color-fg-muted;     -fx-font-style: italic; }
+.hcl-editor .code-area .hcl-string  { -fx-fill: -color-success-fg; }
+.hcl-editor .code-area .hcl-number  { -fx-fill: -color-warning-fg; }
+.hcl-editor .code-area .hcl-keyword { -fx-fill: -color-accent-fg;    -fx-font-weight: bold; }
+.hcl-editor .code-area .hcl-block   { -fx-fill: -color-accent-fg; }
+.hcl-editor .code-area .hcl-attr    { -fx-fill: -color-fg-default; }

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="solutions.onz.toolbox.gruntface.ui.MainController"
+            stylesheets="@style.css">
+    <top>
+        <VBox>
+            <MenuBar>
+                <Menu text="File">
+                    <MenuItem text="Open Terragrunt Project…" onAction="#onOpenTerragrunt">
+                        <graphic><FontIcon iconLiteral="fth-folder"/></graphic>
+                    </MenuItem>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="New Resource (extend Include)…" onAction="#onNewResourceFromInclude">
+                        <graphic><FontIcon iconLiteral="fth-file-plus"/></graphic>
+                    </MenuItem>
+                    <MenuItem text="New Resource (extend Module)…"  onAction="#onNewResourceFromModule">
+                        <graphic><FontIcon iconLiteral="fth-file-plus"/></graphic>
+                    </MenuItem>
+                    <MenuItem text="New Include…"                    onAction="#onNewIncludeFromModule">
+                        <graphic><FontIcon iconLiteral="fth-file-plus"/></graphic>
+                    </MenuItem>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Reload" onAction="#onReload">
+                        <graphic><FontIcon iconLiteral="fth-refresh-cw"/></graphic>
+                    </MenuItem>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Quit" onAction="#onQuit">
+                        <graphic><FontIcon iconLiteral="fth-log-out"/></graphic>
+                    </MenuItem>
+                </Menu>
+                <Menu text="View">
+                    <MenuItem text="Fit to Window" onAction="#onFit">
+                        <graphic><FontIcon iconLiteral="fth-maximize"/></graphic>
+                    </MenuItem>
+                    <CheckMenuItem fx:id="showModulesCheck" text="Show Modules" selected="false"
+                                   onAction="#onToggleShowModules"/>
+                    <CheckMenuItem fx:id="showUnlinkedModulesCheck" text="Show Unlinked Modules" selected="true"
+                                   onAction="#onToggleShowUnlinkedModules"/>
+                    <CheckMenuItem fx:id="showIncludesCheck" text="Show Includes" selected="false"
+                                   onAction="#onToggleShowIncludes"/>
+                    <CheckMenuItem fx:id="showUnlinkedIncludesCheck" text="Show Unlinked Includes" selected="true"
+                                   onAction="#onToggleShowUnlinkedIncludes"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Set commons location…" onAction="#onSetCommonsLocation">
+                        <graphic><FontIcon iconLiteral="fth-share-2"/></graphic>
+                    </MenuItem>
+                    <MenuItem text="Set modules location…" onAction="#onSetModulesLocation">
+                        <graphic><FontIcon iconLiteral="fth-package"/></graphic>
+                    </MenuItem>
+                    <MenuItem text="Clear location overrides (use auto-detect)" onAction="#onClearLocationOverrides">
+                        <graphic><FontIcon iconLiteral="fth-x-circle"/></graphic>
+                    </MenuItem>
+                    <SeparatorMenuItem/>
+                    <Menu text="Theme">
+                        <graphic><FontIcon iconLiteral="fth-droplet"/></graphic>
+                        <fx:define>
+                            <ToggleGroup fx:id="themeGroup"/>
+                        </fx:define>
+                        <RadioMenuItem fx:id="themeLightItem" text="Light"
+                                       toggleGroup="$themeGroup"
+                                       onAction="#onThemeLight"/>
+                        <RadioMenuItem fx:id="themeDarkItem" text="Dark"
+                                       toggleGroup="$themeGroup"
+                                       onAction="#onThemeDark"/>
+                        <RadioMenuItem fx:id="themeAutoItem" text="Auto"
+                                       toggleGroup="$themeGroup"
+                                       onAction="#onThemeAuto"/>
+                    </Menu>
+                </Menu>
+                <Menu text="Help">
+                    <MenuItem text="User Guide…" onAction="#onShowUserGuide">
+                        <graphic><FontIcon iconLiteral="fth-book-open"/></graphic>
+                    </MenuItem>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="About" onAction="#onAbout">
+                        <graphic><FontIcon iconLiteral="fth-info"/></graphic>
+                    </MenuItem>
+                </Menu>
+            </MenuBar>
+            <ToolBar>
+                <MenuButton fx:id="newSplitButton" text="New…">
+                    <graphic><FontIcon iconLiteral="fth-plus"/></graphic>
+                    <items>
+                        <MenuItem text="New Resource (extend Include)…" onAction="#onNewResourceFromInclude">
+                            <graphic><FontIcon iconLiteral="fth-file-plus"/></graphic>
+                        </MenuItem>
+                        <MenuItem text="New Resource (extend Module)…"  onAction="#onNewResourceFromModule">
+                            <graphic><FontIcon iconLiteral="fth-file-plus"/></graphic>
+                        </MenuItem>
+                        <MenuItem text="New Include…"                    onAction="#onNewIncludeFromModule">
+                            <graphic><FontIcon iconLiteral="fth-file-plus"/></graphic>
+                        </MenuItem>
+                    </items>
+                </MenuButton>
+                <Separator orientation="VERTICAL"/>
+                <Button text="Open Project…" onAction="#onOpenTerragrunt">
+                    <graphic><FontIcon iconLiteral="fth-folder"/></graphic>
+                </Button>
+                <Button text="Set Modules Folder…" onAction="#onSetModulesLocation">
+                    <graphic><FontIcon iconLiteral="fth-package"/></graphic>
+                </Button>
+                <Button text="Set Commons Folder…" onAction="#onSetCommonsLocation">
+                    <graphic><FontIcon iconLiteral="fth-share-2"/></graphic>
+                </Button>
+                <Button text="Reload" onAction="#onReload">
+                    <graphic><FontIcon iconLiteral="fth-refresh-cw"/></graphic>
+                </Button>
+                <Separator orientation="VERTICAL"/>
+                <Button text="Fit" onAction="#onFit">
+                    <graphic><FontIcon iconLiteral="fth-maximize"/></graphic>
+                </Button>
+                <Separator orientation="VERTICAL"/>
+                <CheckBox fx:id="showModulesToolbar" text="Show modules" selected="false"
+                          onAction="#onToggleShowModules"/>
+                <CheckBox fx:id="showUnlinkedModulesToolbar" text="incl. unlinked" selected="true"
+                          onAction="#onToggleShowUnlinkedModules"/>
+                <Separator orientation="VERTICAL"/>
+                <CheckBox fx:id="showIncludesToolbar" text="Show includes" selected="false"
+                          onAction="#onToggleShowIncludes"/>
+                <CheckBox fx:id="showUnlinkedIncludesToolbar" text="incl. unlinked" selected="true"
+                          onAction="#onToggleShowUnlinkedIncludes"/>
+            </ToolBar>
+        </VBox>
+    </top>
+    <center>
+        <SplitPane fx:id="splitPane" dividerPositions="0.6">
+            <StackPane fx:id="graphHost">
+                <Label fx:id="emptyState" styleClass="empty-state"
+                       text="Open a Terragrunt project to begin (File → Open Terragrunt Project…)"/>
+            </StackPane>
+            <VBox fx:id="inspectorHost"/>
+        </SplitPane>
+    </center>
+    <bottom>
+        <HBox styleClass="status-bar">
+            <Label fx:id="statusLabel" text="Ready"/>
+        </HBox>
+    </bottom>
+    <padding>
+        <Insets top="0" right="0" bottom="0" left="0"/>
+    </padding>
+</BorderPane>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="solutions.onz.toolbox.gruntface.ui.create.Step2Location"
+      spacing="8">
+    <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
+
+    <Label text="Parent directory" style="-fx-font-weight: bold"/>
+    <TreeView fx:id="dirTree" VBox.vgrow="ALWAYS"/>
+
+    <HBox spacing="8" alignment="CENTER_LEFT">
+        <Label text="Folder name"/>
+        <TextField fx:id="folderNameField" HBox.hgrow="ALWAYS"/>
+    </HBox>
+
+    <Label fx:id="resolvedPathLabel" style="-fx-font-family: monospace"/>
+    <Label fx:id="resolvedNameLabel" style="-fx-font-family: monospace; -fx-opacity: 0.8"/>
+    <Label fx:id="errorLabel" textFill="RED" visible="false" managed="false"/>
+</VBox>

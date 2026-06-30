@@ -1,0 +1,172 @@
+.status-bar  { -fx-padding: 4 8 4 8; -fx-background-color: -color-bg-subtle; }
+.empty-state { -fx-text-fill: -color-fg-muted; -fx-font-size: 14px; }
+.subtitle    { -fx-text-fill: -color-fg-muted; }
+
+/* ---- Inspector: parameter rows ------------------------------------ */
+
+.param-row {
+    -fx-padding: 6 0 6 0;
+}
+
+.param-name {
+    -fx-font-weight: bold;
+    -fx-font-size: 12.5px;
+}
+
+.param-section-title {
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 4 0 2 0;
+}
+
+.expression-tag {
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 10px;
+    -fx-font-style: italic;
+}
+
+.param-info-icon {
+    -fx-text-fill: -color-fg-muted;
+    -fx-font-size: 11px;
+    -fx-cursor: hand;
+}
+
+/* ---- Inspector: type badges --------------------------------------- */
+
+.type-badge {
+    -fx-padding: 1 7 1 7;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-font-size: 10.5px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI Semibold", "Inter", sans-serif;
+    -fx-text-fill: white;
+}
+
+.type-badge-string  { -fx-background-color: #3b82f6; }   /* blue */
+.type-badge-number  { -fx-background-color: #8b5cf6; }   /* violet */
+.type-badge-bool    { -fx-background-color: #ad1164; }   /* green */
+.type-badge-list    { -fx-background-color: #f97316; }   /* orange */
+.type-badge-set     { -fx-background-color: #1aa131; }   /* orange */
+.type-badge-tuple   { -fx-background-color: #f59e0b; }   /* amber */
+.type-badge-map     { -fx-background-color: #18a99a; }   /* teal */
+.type-badge-object  { -fx-background-color: #ec4899; }   /* pink/magenta */
+.type-badge-any     { -fx-background-color: #6b7280; }   /* gray */
+.type-badge-other   { -fx-background-color: #6b7280; }   /* gray */
+
+/* ---- Inspector: resize handle for text areas ---------------------- */
+
+.resize-handle {
+    -fx-background-color: -color-bg-subtle;
+    -fx-cursor: v-resize;
+    -fx-min-height: 6;
+    -fx-pref-height: 6;
+    -fx-max-height: 6;
+    -fx-background-radius: 0 0 4 4;
+    -fx-border-color: -color-border-default;
+    -fx-border-width: 0 1 1 1;
+    -fx-border-radius: 0 0 4 4;
+}
+.resize-handle:hover {
+    -fx-background-color: -color-accent-muted;
+}
+
+/* ---- Inspector: map(object) table --------------------------------- */
+
+.map-object-table {
+    -fx-padding: 0;
+}
+
+.map-object-actions {
+    -fx-padding: 4 0 0 0;
+    -fx-spacing: 6;
+}
+
+.row-delete-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-fg-muted;
+    -fx-padding: 0 6 0 6;
+    -fx-cursor: hand;
+    -fx-font-size: 12px;
+}
+.row-delete-btn:hover { -fx-text-fill: #ef4444; }
+
+/* ---- Help: User Guide window -------------------------------------- */
+
+.help-window-root {
+    -fx-background-color: -color-bg-default;
+}
+
+.help-topics-list {
+    -fx-background-color: -color-bg-subtle;
+    -fx-border-color: -color-border-default;
+    -fx-border-width: 0 1 0 0;
+}
+
+.help-topics-list .list-cell {
+    -fx-padding: 8 12 8 12;
+    -fx-font-size: 13px;
+}
+
+.help-content-scroll {
+    -fx-background-color: -color-bg-default;
+}
+
+.help-content {
+    -fx-padding: 16 20 24 20;
+    -fx-spacing: 10;
+}
+
+.help-h1 {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-padding: 4 0 6 0;
+}
+.help-h2 {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 8 0 4 0;
+}
+.help-h3 {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 6 0 2 0;
+}
+
+.help-paragraph {
+    -fx-line-spacing: 2;
+}
+.help-paragraph .text { -fx-fill: -color-fg-default; }
+
+.help-bold        { -fx-font-weight: bold; }
+.help-italic      { -fx-font-style: italic; }
+.help-code-inline {
+    -fx-font-family: "Consolas", "Menlo", monospace;
+    -fx-fill: -color-fg-default;
+}
+
+.help-code-block {
+    -fx-background-color: -color-bg-subtle;
+    -fx-border-color: -color-border-default;
+    -fx-border-width: 1;
+    -fx-padding: 10 12 10 12;
+    -fx-font-family: "Consolas", "Menlo", monospace;
+}
+.help-code-block .text { -fx-fill: -color-fg-default; }
+
+.help-list-bullet, .help-list-ordered {
+    -fx-spacing: 4;
+    -fx-padding: 2 0 2 6;
+}
+.help-list-marker {
+    -fx-text-fill: -color-fg-muted;
+    -fx-min-width: 18;
+}
+.help-list-body .text { -fx-fill: -color-fg-default; }
+
+.help-link {
+    -fx-text-fill: -color-accent-emphasis;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+    -fx-underline: true;
+}
