@@ -2,6 +2,8 @@
 
 A JavaFX desktop tool for exploring and editing Terragrunt configurations — parses `terragrunt.hcl` units and modules, renders them as a dependency graph, and lets you inspect and edit inputs.
 
+![Screenshot](./docs/scr.png)
+
 ## Tech stack
 
 - **Java 25** (toolchain auto-provisioned by Gradle)
